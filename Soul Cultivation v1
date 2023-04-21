@@ -160,8 +160,8 @@ c:Toggle("Auto lotus",function(bool)
     end
 end)
 
-c:Label("Yin Archipelago",{
-    TextSize = 25;
+c:Label("Yin Archipelago left side",{
+    TextSize = 20;
     TextColor = Color3.fromRGB(255,255,255);
     BgColor = Color3.fromRGB(69,69,69);
     
@@ -175,8 +175,8 @@ c:Toggle("Auto Yin and Yang",function(bool)
     end
 end)
 
-c:Label("Yin Archipelago",{
-    TextSize = 25;
+c:Label("Yin Archipelago right side",{
+    TextSize = 20;
     TextColor = Color3.fromRGB(255,255,255);
     BgColor = Color3.fromRGB(69,69,69);
     
