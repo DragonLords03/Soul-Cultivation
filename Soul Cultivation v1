@@ -1,0 +1,155 @@
+getgenv().AutoQuest = false;
+getgenv().AutoGinseng = false;
+getgenv().AutoYinYang = false;
+getgenv().AutoLotus = false;
+wait_time = nil
+
+function Quest(SelectedQuest)
+    spawn(function()
+        while AutoQuest == true do
+            local args = {[1] = workspace["Quest NPCS"][SelectedQuest].HumanoidRootPart.QuestActivator.Quest}
+            game:GetService("ReplicatedStorage")["Quest Remote Events"].EnableQuest:FireServer(unpack(args))
+            wait()
+        end
+    end)
+end
+
+function Ginseng()
+    spawn(function()
+        while AutoGinseng == true do
+            for i,v in pairs (game.Workspace.Areas["Forest Of Dao"].Ginseng:GetChildren()) do
+            if AutoGinseng == false then break end
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.CFrame
+            wait(0.3)
+            local args = { v, "Ginseng" }
+            game:GetService("ReplicatedStorage").Harvest.Harvest:FireServer(unpack(args))
+            wait(wait_time) 
+            end
+        end
+    end)
+end
+
+function Lotus()
+    spawn(function()
+        while AutoLotus == true do
+            for k, v in pairs(workspace.Areas["Green Pelago"]:GetChildren()) do
+                if v.Name == "Lotus" then
+                    v.Name = "XiaoGreen" .. k
+                end
+            end
+            for i = 2, 36 do
+                if AutoLotus == false then break end
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.Areas["Green Pelago"]["XiaoGreen" .. i].CFrame
+                wait(0.3)
+                local args = {[1] = workspace.Areas:FindFirstChild("Green Pelago")["XiaoGreen" .. i],[2] = "Green Lotus"}
+                game:GetService("ReplicatedStorage").Harvest.Harvest:FireServer(unpack(args))
+                wait(wait_time)
+            end
+            for k, v in pairs(workspace.Areas["Green Pelago"]:GetChildren()) do
+                if v.Name == "Lotus" then
+                    v.Name = "XiaoGreen" .. k
+                end
+            end
+            wait()
+        end
+    end)
+end
+
+function YinYang()
+    spawn(function()
+        while AutoYinYang == true do
+            for k, v in pairs(workspace.Areas["Demon Pelago"]:GetChildren()) do
+                if v.Name == "Divine Yang Tree" then
+                    v.Name = "XiaoRed" .. k
+                end
+            end
+            for i = 2, 6 do
+                if AutoYinYang == false then break end
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.Areas["Demon Pelago"]["XiaoRed" .. i].Plant.CFrame
+                wait(0.3)
+                local args = {[1] = workspace.Areas:FindFirstChild("Demon Pelago")["XiaoRed" .. i].Plant,[2] = "Divine Yang Fruit"}
+                game:GetService("ReplicatedStorage").Harvest.Harvest:FireServer(unpack(args))
+                wait(wait_time) 
+            end
+                for k, v in pairs(workspace.Areas["Demon Pelago"]:GetChildren()) do
+                    if v.Name == "Divine Yang Tree" then
+                        v.Name = "XiaoRed" .. k
+                    end
+                end
+            wait()
+            for k, v in pairs(workspace.Areas["White Pelago"]:GetChildren()) do
+                if v.Name == "Divine Yang Tree" then
+                    v.Name = "XiaoBlue" .. k
+                end
+            end
+            for i = 2, 7 do
+                if AutoYinYang == false then break end
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.Areas["White Pelago"]["XiaoBlue" .. i].Plant.CFrame
+                wait(0.3)
+                local args = {[1] = workspace.Areas:FindFirstChild("White Pelago")["XiaoBlue" .. i].Plant,[2] = "Divine Yin Fruit"}
+                game:GetService("ReplicatedStorage").Harvest.Harvest:FireServer(unpack(args))
+                wait(wait_time)
+            end              
+                for k, v in pairs(workspace.Areas["White Pelago"]:GetChildren()) do
+                    if v.Name == "Divine Yang Tree" then
+                        v.Name = "XiaoBlue" .. k
+                    end
+                end
+            wait()
+        end
+    end)
+end
+
+local library = loadstring(game:HttpGet(('https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/wall%20v3')))()
+
+local w = library:CreateWindow("Soul Cultivation")
+
+local b = w:CreateFolder("Quest")
+
+local c = w:CreateFolder("Auto Stuffs")
+
+local SelectedQuest;
+b:Dropdown("Quest",{"Greg - Quest","Xavier - Quest","Brickman - Quest","Shelly - Quest","Shelly (again) - Quest","Strong Cultivator - Quest","Nick - Quest","Monk - Quest","Rick - Quest","junior - Quest","Elder - Quest,'Elder - Quest(2)","Elder - Quest(LAST)","Damon - Quest","Damon (2) - Quest","Damon (Last) - Quest"},true,function(value)
+    SelectedQuest = value;
+    print(value)
+end)
+b:Toggle("Auto Quest",function(bool)
+    getgenv().AutoQuest = bool
+    print(': ', bool)
+    if bool and SelectedQuest then
+        Quest(SelectedQuest);
+    end
+end)
+
+c:Toggle("Auto Ginseng",function(bool)
+    getgenv().AutoGinseng = bool
+    print(': ', bool)
+    if bool then
+        Ginseng();
+    end
+end)
+
+c:Toggle("Auto lotus",function(bool)
+    getgenv().AutoLotus = bool
+    print(': ', bool)
+    if bool then
+        Lotus();
+    end
+end)
+
+c:Toggle("Auto Yin and Yang",function(bool)
+    getgenv().AutoYinYang = bool
+    print(': ', bool)
+    if bool then
+        YinYang();
+    end
+end)
+
+c:Slider("wait time",{
+    min = 0; 
+    max = 10; 
+    precise = true; 
+},function(value)
+    wait_time = value
+    print(': ', value)
+end)
