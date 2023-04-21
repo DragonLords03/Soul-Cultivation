@@ -145,6 +145,13 @@ c:Toggle("Auto Ginseng",function(bool)
     end
 end)
 
+c:Label("Forest of Dao",{
+    TextSize = 25;
+    TextColor = Color3.fromRGB(255,255,255);
+    BgColor = Color3.fromRGB(69,69,69);
+    
+}) 
+
 c:Toggle("Auto lotus",function(bool)
     getgenv().AutoLotus = bool
     print(': ', bool)
@@ -153,6 +160,13 @@ c:Toggle("Auto lotus",function(bool)
     end
 end)
 
+c:Label("Yin Archipelago",{
+    TextSize = 25;
+    TextColor = Color3.fromRGB(255,255,255);
+    BgColor = Color3.fromRGB(69,69,69);
+    
+}) 
+
 c:Toggle("Auto Yin and Yang",function(bool)
     getgenv().AutoYinYang = bool
     print(': ', bool)
@@ -160,6 +174,13 @@ c:Toggle("Auto Yin and Yang",function(bool)
         YinYang();
     end
 end)
+
+c:Label("Yin Archipelago",{
+    TextSize = 25;
+    TextColor = Color3.fromRGB(255,255,255);
+    BgColor = Color3.fromRGB(69,69,69);
+    
+}) 
 
 c:Slider("wait time",{
     min = 0; 
