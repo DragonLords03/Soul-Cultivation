@@ -16,7 +16,7 @@ function Quest(SelectedQuest)
         while AutoQuest == true do
             local args = {[1] = workspace["Quest NPCS"][SelectedQuest].HumanoidRootPart.QuestActivator.Quest}
             game:GetService("ReplicatedStorage")["Quest Remote Events"].EnableQuest:FireServer(unpack(args))
-            wait()
+            wait(1)
         end
     end)
 end
