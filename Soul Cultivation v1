@@ -118,7 +118,7 @@ local c = w:CreateFolder("Auto Stuffs")
 local d = w:CreateFolder("Credit")
 
 local SelectedQuest;
-b:Dropdown("Quest",{"Greg - Quest","Xavier - Quest","Brickman - Quest","Shelly - Quest","Shelly (again) - Quest","Strong Cultivator - Quest","Nick - Quest","Monk - Quest","Rick - Quest","junior - Quest","Elder - Quest,'Elder - Quest(2)","Elder - Quest(LAST)","Damon - Quest","Damon (2) - Quest","Damon (Last) - Quest"},true,function(value)
+b:Dropdown("Quest",{"Greg - Quest","Xavier - Quest","Brickman - Quest","Shelly - Quest","Shelly (again) - Quest","Strong Cultivator - Quest","Nick - Quest","Monk - Quest","Rick - Quest","Junior - Quest","Elder - Quest,'Elder - Quest(2)","Elder - Quest(LAST)","Damon - Quest","Damon (2) - Quest","Damon (Last) - Quest"},true,function(value)
     SelectedQuest = value;
     print(value)
 end)
