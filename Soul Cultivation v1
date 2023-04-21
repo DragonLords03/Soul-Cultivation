@@ -137,6 +137,20 @@ b:Label("Take Quests",{
     
 }) 
 
+c:Label("NEED TO BE IN",{
+    TextSize = 18;
+    TextColor = Color3.fromRGB(255,0,0);
+    BgColor = Color3.fromRGB(69,69,69);
+    
+}) 
+
+c:Label("Forest of Dao",{
+    TextSize = 25;
+    TextColor = Color3.fromRGB(255,255,255);
+    BgColor = Color3.fromRGB(69,69,69);
+    
+}) 
+
 c:Toggle("Auto Ginseng",function(bool)
     getgenv().AutoGinseng = bool
     print(': ', bool)
@@ -152,8 +166,8 @@ c:Label("NEED TO BE IN",{
     
 }) 
 
-c:Label("Forest of Dao",{
-    TextSize = 25;
+c:Label("Yin Archipelago left side",{
+    TextSize = 20;
     TextColor = Color3.fromRGB(255,255,255);
     BgColor = Color3.fromRGB(69,69,69);
     
@@ -174,8 +188,8 @@ c:Label("NEED TO BE IN",{
     
 }) 
 
-c:Label("Yin Archipelago left side",{
-    TextSize = 20;
+c:Label("Yin Archipelago right side",{
+    TextSize = 18;
     TextColor = Color3.fromRGB(255,255,255);
     BgColor = Color3.fromRGB(69,69,69);
     
@@ -188,20 +202,6 @@ c:Toggle("Auto Yin and Yang",function(bool)
         YinYang();
     end
 end)
-
-c:Label("NEED TO BE IN",{
-    TextSize = 18;
-    TextColor = Color3.fromRGB(255,0,0);
-    BgColor = Color3.fromRGB(69,69,69);
-    
-}) 
-
-c:Label("Yin Archipelago right side",{
-    TextSize = 18;
-    TextColor = Color3.fromRGB(255,255,255);
-    BgColor = Color3.fromRGB(69,69,69);
-    
-}) 
 
 c:Slider("wait time",{
     min = 0; 
