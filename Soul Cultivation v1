@@ -108,6 +108,8 @@ local b = w:CreateFolder("Quest")
 
 local c = w:CreateFolder("Auto Stuffs")
 
+local d = w:CreateFolder("Credit")
+
 local SelectedQuest;
 b:Dropdown("Quest",{"Greg - Quest","Xavier - Quest","Brickman - Quest","Shelly - Quest","Shelly (again) - Quest","Strong Cultivator - Quest","Nick - Quest","Monk - Quest","Rick - Quest","junior - Quest","Elder - Quest,'Elder - Quest(2)","Elder - Quest(LAST)","Damon - Quest","Damon (2) - Quest","Damon (Last) - Quest"},true,function(value)
     SelectedQuest = value;
@@ -120,6 +122,13 @@ b:Toggle("Auto Quest",function(bool)
         Quest(SelectedQuest);
     end
 end)
+
+b:Label("Take Quests",{
+    TextSize = 25; -- Self Explaining
+    TextColor = Color3.fromRGB(255,255,255); -- Self Explaining
+    BgColor = Color3.fromRGB(69,69,69); -- Self Explaining
+    
+}) 
 
 c:Toggle("Auto Ginseng",function(bool)
     getgenv().AutoGinseng = bool
@@ -153,3 +162,17 @@ c:Slider("wait time",{
     wait_time = value
     print(': ', value)
 end)
+
+c:Label("Harvesting Speed",{
+    TextSize = 25; -- Self Explaining
+    TextColor = Color3.fromRGB(255,255,255); -- Self Explaining
+    BgColor = Color3.fromRGB(69,69,69); -- Self Explaining
+    
+}) 
+
+d:Label("Demon Immortel",{
+    TextSize = 25; -- Self Explaining
+    TextColor = Color3.fromRGB(255,255,255); -- Self Explaining
+    BgColor = Color3.fromRGB(69,69,69); -- Self Explaining
+    
+}) 
