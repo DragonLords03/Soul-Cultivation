@@ -89,7 +89,7 @@ function YinYang()
                     v.Name = "XiaoBlue" .. k
                 end
             end
-            for i = 2, 7 do
+            for i = 2, 6 do
                 if AutoYinYang == false then break end
                 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.Areas["White Pelago"]["XiaoBlue" .. i].Plant.CFrame
                 wait(0.3)
@@ -183,3 +183,5 @@ d:Label("Demon Immortel",{
     BgColor = Color3.fromRGB(69,69,69);
     
 }) 
+
+--loadstring(game:HttpGet("https://raw.githubusercontent.com/DragonLords03/Soul-Cultivation/main/Soul%20Cultivation%20v1"))()
