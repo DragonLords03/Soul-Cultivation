@@ -117,6 +117,9 @@ function Platform()
             while autoplatform do
                 wait()
             Part.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0, -3.02, 0)
+              if autoplatform == false then
+                game:GetService("Workspace").Part:Destroy()
+              end
             end
         end
     end)
@@ -147,7 +150,7 @@ b:Toggle("Auto Quest",function(bool)
     end
 end)
 
-d:Toggle("Auto Platform",function(bool)
+d:Toggle("Auto Create Platform",function(bool)
     getgenv().autoplatform = bool
     print(': ', bool)
     if bool then
