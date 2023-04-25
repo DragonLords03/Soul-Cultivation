@@ -9,6 +9,7 @@ getgenv().AutoQuest = false;
 getgenv().AutoGinseng = false;
 getgenv().AutoYinYang = false;
 getgenv().AutoLotus = false;
+getgenv().autoplatform = false;
 wait_time = nil
 
 function Quest(SelectedQuest)
@@ -107,6 +108,20 @@ function YinYang()
     end)
 end
 
+function Platform()
+    spawn(function()
+        local Part = Instance.new("Part", workspace)
+        while autoplatform == true do
+            Part.Anchored = true
+            Part.Size = Vector3.new(10, .001, 10)
+            while autoplatform do
+                wait()
+            Part.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0, -3.02, 0)
+            end
+        end
+    end)
+end
+
 local library = loadstring(game:HttpGet(('https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/wall%20v3')))()
 
 local w = library:CreateWindow("Soul Cultivation")
@@ -115,7 +130,9 @@ local b = w:CreateFolder("Quest")
 
 local c = w:CreateFolder("Auto Stuffs")
 
-local d = w:CreateFolder("Credit")
+local d = w:CreateFolder("create platform")
+
+local e = w:CreateFolder("Credit")
 
 local SelectedQuest;
 b:Dropdown("Quest",{"Greg - Quest","Xavier - Quest","Brickman - Quest","Shelly  - Quest","Shelly (again)  - Quest","Strong Cultivator - Quest","Nick - Quest","Monk - Quest","Rick - Quest","Junior  - Quest","Elder - Quest","Elder - Quest (2)","Elder - Quest(LAST)","Damon - Quest","Damon (2) - Quest","Damon (Last) - Quest"},true,function(value)
@@ -127,6 +144,14 @@ b:Toggle("Auto Quest",function(bool)
     print(': ', bool)
     if bool and SelectedQuest then
         Quest(SelectedQuest);
+    end
+end)
+
+d:Toggle("Auto Platform",function(bool)
+    getgenv().autoplatform = bool
+    print(': ', bool)
+    if bool then
+        Platform()
     end
 end)
 
@@ -219,7 +244,7 @@ c:Toggle("Auto Yin and Yang",function(bool)
     end
 end)
 
-d:Label("Demon Immortel",{
+e:Label("Demon Immortel",{
     TextSize = 25;
     TextColor = Color3.fromRGB(255,255,255);
     BgColor = Color3.fromRGB(69,69,69);
