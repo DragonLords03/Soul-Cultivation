@@ -138,7 +138,7 @@ local d = w:CreateFolder("create platform")
 local e = w:CreateFolder("Credit")
 
 local SelectedQuest;
-b:Dropdown("Quest",{"Greg - Quest","Xavier - Quest","Brickman - Quest","Shelly  - Quest","Shelly (again)  - Quest","Strong Cultivator - Quest","Nick - Quest","Monk - Quest","Rick - Quest","Junior  - Quest","Elder - Quest","Elder - Quest (2)","Elder - Quest(LAST)","Damon - Quest","Damon (2) - Quest","Damon (Last) - Quest"},true,function(value)
+b:Dropdown("Quest",{"Greg - Quest","Xavier - Quest","Brickman - Quest","Shelly  - Quest","Shelly (again)  - Quest","Strong Cultivator - Quest","Nick - Quest","Monk - Quest","Rick - Quest","Junior  - Quest","Elder - Quest","Elder - Quest (2)","Elder - Quest (LAST)","Damon - Quest","Damon (2) - Quest","Damon (Last) - Quest"},true,function(value)
     SelectedQuest = value;
     print(value)
 end)
@@ -150,7 +150,7 @@ b:Toggle("Auto Quest",function(bool)
     end
 end)
 
-d:Toggle("Auto Create Platform",function(bool)
+d:Toggle("Auto Platform",function(bool)
     getgenv().autoplatform = bool
     print(': ', bool)
     if bool then
