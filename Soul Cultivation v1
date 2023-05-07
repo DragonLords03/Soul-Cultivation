@@ -48,10 +48,10 @@ function Quest()
             
             game:GetService("ReplicatedStorage")["Quest Remote Events"].EnableQuest:FireServer(lol)
 
-            Tween(game.Players.LocalPlayer.Character.HumanoidRootPart, Vector3.new(-2257.34, 83.5238, 3920.62), 5)
+            Tween(game.Players.LocalPlayer.Character.HumanoidRootPart, Vector3.new(-2261.49, 83.5238, 3993.08), 5)
             wait(1.05)
             
-            local quest1 = workspace["Quest NPCS"]["Elder - Quest (LAST)"]:FindFirstChild("Quest", 1)
+            local quest1 = workspace["Quest NPCS"]["Damon - Quest"]:FindFirstChild("Quest", 1)
             local quest2 = workspace["Quest NPCS"].Angel:FindFirstChild("Quest", 1)
             local lol = {
                 EnemyName = quest1.EnemyName;
@@ -60,7 +60,7 @@ function Quest()
                 RankRequirement = quest1.RankRequirement;
             }
             game:GetService("ReplicatedStorage")["Quest Remote Events"].EnableQuest:FireServer(lol)
-            Tween(game.Players.LocalPlayer.Character.HumanoidRootPart, Vector3.new(-2259.47, 168.319, 4044.05), 5)
+            Tween(game.Players.LocalPlayer.Character.HumanoidRootPart, Vector3.new(-2955.71, 70.25, 4364.19), 5)
             wait(1.05)
 
             local quest1 = workspace["Quest NPCS"]["Damon - Quest"]:FindFirstChild("Quest", 1)
@@ -72,10 +72,10 @@ function Quest()
                 RankRequirement = quest1.RankRequirement;
             }
             game:GetService("ReplicatedStorage")["Quest Remote Events"].EnableQuest:FireServer(lol)
-            Tween(game.Players.LocalPlayer.Character.HumanoidRootPart, Vector3.new(-2949.51, 70.25, 4365.75), 5)
+            Tween(game.Players.LocalPlayer.Character.HumanoidRootPart, Vector3.new(-3019.36, 70.9126, 4554.08), 5)
             wait(1.05)
 
-            local quest1 = workspace["Quest NPCS"]["Damon - Quest"]:FindFirstChild("Quest", 1)
+            local quest1 = workspace["Quest NPCS"]["Damon (2) - Quest"]:FindFirstChild("Quest", 1)
             local quest2 = workspace["Quest NPCS"].Angel:FindFirstChild("Quest", 1)
             local lol = {
                 EnemyName = quest1.EnemyName;
@@ -84,7 +84,7 @@ function Quest()
                 RankRequirement = quest1.RankRequirement;
             }
             game:GetService("ReplicatedStorage")["Quest Remote Events"].EnableQuest:FireServer(lol)
-            Tween(game.Players.LocalPlayer.Character.HumanoidRootPart, Vector3.new(-2966.18, 70.25, 4587.84), 5)
+            Tween(game.Players.LocalPlayer.Character.HumanoidRootPart, Vector3.new(-2886.51, 70.25, 4676.96), 5)
             wait(1.05)
         end
     end)
@@ -321,4 +321,4 @@ e:Label("Demon Immortel",{
     
 }) 
 
---loadstring(game:HttpGet("https://raw.githubusercontent.com/DragonLords03/Soul-Cultivation/main/Soul%20Cultivation%20v1"))()
+--loadstring(game:HttpGet("https://raw.githubusercontent.com/DragonLords03/DragonLords03/main/SLQuests"))()
