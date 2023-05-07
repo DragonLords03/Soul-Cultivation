@@ -72,7 +72,7 @@ function Quest()
                 RankRequirement = quest1.RankRequirement;
             }
             game:GetService("ReplicatedStorage")["Quest Remote Events"].EnableQuest:FireServer(lol)
-            Tween(game.Players.LocalPlayer.Character.HumanoidRootPart, Vector3.new(-3019.36, 70.9126, 4554.08), 5)
+            Tween(game.Players.LocalPlayer.Character.HumanoidRootPart, Vector3.new(-2954.72, 70.25, 4521.17), 5)
             wait(1.05)
 
             local quest1 = workspace["Quest NPCS"]["Damon (2) - Quest"]:FindFirstChild("Quest", 1)
