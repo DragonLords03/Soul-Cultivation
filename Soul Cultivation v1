@@ -16,7 +16,7 @@ local ts = game:GetService("TweenService")
 
 local function Tween(part, endpos, speed)
     if part and endpos then
-        local Time = 0.50
+        local Time = 0.80
         local Info = TweenInfo.new(Time, Enum.EasingStyle.Linear)
         local Tween = ts:Create(part,Info,{CFrame = CFrame.new(endpos.X,endpos.Y,endpos.Z)})
         Tween:Play()
@@ -199,7 +199,7 @@ function Platform()
     end)
 end
 
-local library = loadstring(httpget(('https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/wall%20v3')))()
+local library = loadstring(game:HttpGet(('https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/wall%20v3')))()
 
 local w = library:CreateWindow("Soul Cultivation")
 
