@@ -256,6 +256,10 @@ function Insight()
         end
     end)
 end
+function Delete()
+    game:GetService("Workspace").Areas["Space-Crack"].Crack:Destroy()
+    game:GetService("Workspace").Areas["Space-Crack"].blood:Destroy()
+end
 
 function Platform()
     spawn(function()
@@ -354,6 +358,9 @@ d:Toggle("Insight Fruit",function(bool)
         Insight();
     end
 end)
+d:Button("Delete for insight",function()
+    Delete();
+end)
 
 b:Toggle("Auto Platform",function(bool)
     getgenv().autoplatform = bool
@@ -373,6 +380,4 @@ c:Label("Demon Immortel",{
 --[[
 loadstring(game:HttpGet("https://raw.githubusercontent.com/DragonLords03/DragonLords03/main/SLQuests"))()
 
-game:GetService("Workspace").Areas["Space-Crack"].Crack:Destroy()
-game:GetService("Workspace").Areas["Space-Crack"].blood:Destroy()
 ]]
