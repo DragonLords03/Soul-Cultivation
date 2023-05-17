@@ -11,7 +11,8 @@ getgenv().AutoGinseng = false;
 getgenv().AutoYinYang = false;
 getgenv().AutoLotus = false;
 getgenv().AutoMoon = false;
-wait_time = nil
+getgenv().AutoInsight = false;
+wait_time = 2
 
 local ts = game:GetService("TweenService")
 
@@ -127,7 +128,8 @@ function Lotus()
             end
             for i = 2, 36 do
                 if AutoLotus == false then break end
-                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.Areas["Green Pelago"]["XiaoGreen" .. i].CFrame
+                local endpos = game.Workspace.Areas["Green Pelago"]["XiaoGreen" .. i].CFrame.p
+                Tween(game.Players.LocalPlayer.Character.HumanoidRootPart, endpos, 0.3)
                 wait(0.3)
                 local args = {[1] = workspace.Areas:FindFirstChild("Green Pelago")["XiaoGreen" .. i],[2] = "Green Lotus"}
                 game:GetService("ReplicatedStorage").Harvest.Harvest:FireServer(unpack(args))
@@ -221,6 +223,28 @@ function Moon()
     end)
 end
 
+function LoadI()
+    Tween2(game.Players.LocalPlayer.Character.HumanoidRootPart, Vector3.new(-2954, 75, 4521), 5)
+end
+function Insight()
+    spawn(function()
+        while AutoInsight == true do
+            for k, v in pairs(game.Workspace.Areas["Space-Crack"]:GetChildren()) do
+                if Autoinsight == false then break end
+                a = 0
+                Tween(game.Players.LocalPlayer.Character.HumanoidRootPart, v.CFrame.p + Vector3.new(0, 8, 0), 0.3 )
+                wait(0.3)
+                local args = { v, "InsightFruit"}
+                game:GetService("ReplicatedStorage").Harvest.Harvest:FireServer(unpack(args))
+                repeat
+                    Tween(game.Players.LocalPlayer.Character.HumanoidRootPart, v.CFrame.p + Vector3.new(0, 8, 0), 0.3 )
+                    a = a + 1
+                until a == 3
+            end
+        end
+    end)
+end
+
 function Platform()
     spawn(function()
         local Part = Instance.new("Part", workspace)
@@ -253,10 +277,10 @@ local c = w:CreateFolder("Credit")
 local d = x:CreateFolder("Auto Harvest")
 
 
-a:Button("Load",function()
+a:Button("Load Quest",function()
     LoadQ();
 end)
-a:Toggle("Auto Quest",function(bool)
+a:Toggle("Quest",function(bool)
     getgenv().AutoQuest = bool
     print(': ', bool)
     if bool then
@@ -264,19 +288,10 @@ a:Toggle("Auto Quest",function(bool)
     end
 end)
 
-d:Slider("wait time",{
-    min = 2; 
-    max = 10; 
-    precise = true; 
-},function(value)
-    wait_time = value
-    print(': ', value)
-end)
-
-d:Button("Load",function()
+d:Button("Load Ginseng",function()
     LoadG();
 end)
-d:Toggle("Auto Ginseng",function(bool)
+d:Toggle("Ginseng",function(bool)
     getgenv().AutoGinseng = bool
     print(': ', bool)
     if bool then
@@ -284,10 +299,21 @@ d:Toggle("Auto Ginseng",function(bool)
     end
 end)
 
-d:Button("Load",function()
+d:Button("Load Lotus",function()
+    LoadL();
+end)
+d:Toggle("Lotus",function(bool)
+    getgenv().AutoLotus = bool
+    print(': ', bool)
+    if bool then
+        Lotus();
+    end
+end)
+
+d:Button("Load Yin/Yang",function()
     LoadY();
 end)
-d:Toggle("Auto Yin and Yang",function(bool)
+d:Toggle("Yin/Yang Fruit",function(bool)
     getgenv().AutoYinYang = bool
     print(': ', bool)
     if bool then
@@ -295,10 +321,10 @@ d:Toggle("Auto Yin and Yang",function(bool)
     end
 end)
 
-d:Button("Load",function()
+d:Button("Load Moon",function()
     LoadM();
 end)
-d:Toggle("Auto Moon Flower",function(bool)
+d:Toggle("Moon Flower",function(bool)
     getgenv().AutoMoon = bool
     print(': ', bool)
     if bool then
@@ -306,14 +332,14 @@ d:Toggle("Auto Moon Flower",function(bool)
     end
 end)
 
-d:Button("Load",function()
-    LoadL();
+d:Button("Load Insight",function()
+    LoadI();
 end)
-d:Toggle("Auto lotus",function(bool)
-    getgenv().AutoLotus = bool
+d:Toggle("Insight Fruit",function(bool)
+    getgenv().AutoInsight = bool
     print(': ', bool)
     if bool then
-        Lotus();
+        Insight();
     end
 end)
 
