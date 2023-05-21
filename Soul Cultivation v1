@@ -18,7 +18,7 @@ local ts = game:GetService("TweenService")
 
 local function Tween(part, endpos, speed)
     if part and endpos then
-        local Time = 0.50
+        local Time = 0.45
         local Info = TweenInfo.new(Time, Enum.EasingStyle.Linear)
         local Tween = ts:Create(part,Info,{CFrame = CFrame.new(endpos.X,endpos.Y,endpos.Z)})
         Tween:Play()
@@ -56,7 +56,7 @@ function Quest()
             game:GetService("ReplicatedStorage")["Quest Remote Events"].EnableQuest:FireServer(lol)
 
             Tween(game.Players.LocalPlayer.Character.HumanoidRootPart, Vector3.new(-2261.49, 83.5238, 3993.08), 5)
-            wait(0.9)
+            wait(0.75)
             
             local quest1 = workspace["Quest NPCS"]["Damon - Quest"]:FindFirstChild("Quest", 1)
             local quest2 = workspace["Quest NPCS"].Angel:FindFirstChild("Quest", 1)
@@ -68,7 +68,7 @@ function Quest()
             }
             game:GetService("ReplicatedStorage")["Quest Remote Events"].EnableQuest:FireServer(lol)
             Tween(game.Players.LocalPlayer.Character.HumanoidRootPart, Vector3.new(-2986, 71, 4364), 5)
-            wait(0.9)
+            wait(0.75)
 
             local quest1 = workspace["Quest NPCS"]["Damon - Quest"]:FindFirstChild("Quest", 1)
             local quest2 = workspace["Quest NPCS"].Angel:FindFirstChild("Quest", 1)
@@ -80,7 +80,7 @@ function Quest()
             }
             game:GetService("ReplicatedStorage")["Quest Remote Events"].EnableQuest:FireServer(lol)
             Tween(game.Players.LocalPlayer.Character.HumanoidRootPart, Vector3.new(-3052, 71, 4505), 5)
-            wait(0.9)
+            wait(0.75)
 
             local quest1 = workspace["Quest NPCS"]["Damon (Last) - Quest"]:FindFirstChild("Quest", 1)
             local quest2 = workspace["Quest NPCS"].Angel:FindFirstChild("Quest", 1)
@@ -92,7 +92,7 @@ function Quest()
             }
             game:GetService("ReplicatedStorage")["Quest Remote Events"].EnableQuest:FireServer(lol)
             Tween(game.Players.LocalPlayer.Character.HumanoidRootPart, Vector3.new(-3217, 71.7, 4616), 5)
-            wait(0.9)
+            wait(0.75)
 
             local quest1 = workspace["Quest NPCS"]["Damon (2) - Quest"]:FindFirstChild("Quest", 1)
             local quest2 = workspace["Quest NPCS"].Angel:FindFirstChild("Quest", 1)
@@ -104,7 +104,7 @@ function Quest()
             }
             game:GetService("ReplicatedStorage")["Quest Remote Events"].EnableQuest:FireServer(lol)
             Tween(game.Players.LocalPlayer.Character.HumanoidRootPart, Vector3.new(-2871, 71, 4643), 5)
-            wait(0.9)
+            wait(0.75)
 
             local quest1 = workspace["Quest NPCS"]["Elder - Quest (LAST)"]:FindFirstChild("Quest", 1)
             local quest2 = workspace["Quest NPCS"].Angel:FindFirstChild("Quest", 1)
@@ -116,7 +116,7 @@ function Quest()
             }
             game:GetService("ReplicatedStorage")["Quest Remote Events"].EnableQuest:FireServer(lol)
             Tween(game.Players.LocalPlayer.Character.HumanoidRootPart, Vector3.new(-2261.70, 164, 4055.80), 5)
-            wait(0.9)
+            wait(0.75)
         end
     end)
 end
